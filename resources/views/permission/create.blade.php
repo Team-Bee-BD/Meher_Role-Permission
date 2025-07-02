@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
              Permissions\create
             </h2>
-            <a href="{{route('permission.index')}} " class="bg-slate-700 text-sm rounded-md text-Dark px-3 py-2" >Back</a>
+            <a href="{{route('permission.index')}} " class="bg-slate-700 text-sm rounded-md text-white px-3 py-2" >Back</a>
        
         </div>
         
@@ -26,7 +26,7 @@
 
 
                             </div>
-                            <button class="bg-slate-700 text-sm rounded-md px-5 py-3 text-Dark">Submit</button>
+                            <button class="bg-slate-700 text-sm rounded-md px-5 py-3 text-white">Submit</button>
                         </div>
                     </form>
                 </div>

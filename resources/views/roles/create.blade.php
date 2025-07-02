@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
              Roles\create
             </h2>
-            <a href="{{route('roles.index')}} " class="bg-slate-700 text-sm rounded-md text-dark px-3 py-2" >Back</a>
+            <a href="{{route('roles.index')}} " class="bg-slate-700 text-sm rounded-md text-white px-3 py-2" >Back</a>
        
         </div>
         
@@ -43,7 +43,7 @@ value="{{$permission->name}}">
 </div>
 
 
-                            <button class="bg-slate-700 text-sm rounded-md px-5 py-3 text-dark">Submit</button>
+                            <button class="bg-slate-700 text-sm rounded-md px-5 py-3 text-white">Submit</button>
                         </div>
                     </form>
                 </div>

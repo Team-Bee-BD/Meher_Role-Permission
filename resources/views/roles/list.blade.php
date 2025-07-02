@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Permissions') }}
             </h2>
-            <a href="{{route('roles.create')}} " class="bg-slate-700 text-sm rounded-md btn btn-dark px-3 py-3" >Create</a>
+            <a href="{{route('roles.create')}} " class="bg-slate-700 text-sm rounded-md text-white px-3 py-3" >Create</a>
         </div>
        
     </x-slot>

@@ -67,7 +67,7 @@ class PermissionController extends Controller
     }
 
 
-    public function destroy(Request $request)
+    public function destroy($id, Request $request)
     {
         $id = $request->id;
 

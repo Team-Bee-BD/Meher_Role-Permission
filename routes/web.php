@@ -42,11 +42,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
     Route::get('/articles/{id}/edit', [ArticleController::class, 'edit'])->name('articles.edit');
     Route::post('/articles/{id}', [ArticleController::class, 'update'])->name('articles.update');
+    Route::delete('/articles', [PermissionController::class, 'destroy'])->name('articles.destroy');
 
 
     Route::get('/users', [UserController::class, 'index'])->name('user.index');
-
-
 });
 
 require __DIR__ . '/auth.php';

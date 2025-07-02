@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Permissions') }}
             </h2>
-            <a href="{{route('permission.create')}} " class="bg-slate-700 text-sm rounded-md  text-dark px-3 py-3" style="text-decoration: btn " >Create</a>
+            <a href="{{route('permission.create')}} " class="bg-slate-700 text-sm rounded-md  text-white px-3 py-3" style="text-decoration: btn " >Create</a>
         </div>
        
     </x-slot>
@@ -30,7 +30,7 @@
                     <td class="px-6 py-3 text-left">{{$permission->name}}</td>
                     <td class="px-6 py-3 text-left">{{\Carbon\Carbon::parse($permission->created_at) ->format('d M, Y')}}</td>
                     <td class="px-6 py-3 text-center"> 
-                         <a href="javscript:void(0);"onclick ="deletePermission({{$permission->id}})" class="bg-red-600 text-sm rounded-md text-white px-3 py-3 hover:bg-red-500" >Delete</a>
+                         <a href="javascript:void(0);"onclick ="deletePermission({{$permission->id}})" class="bg-red-600 text-sm rounded-md text-white px-3 py-3 hover:bg-red-500" >Delete</a>
                   </td>
                 </tr> 
                  @endforeach   
@@ -40,26 +40,28 @@
          </table>
         </div>
     </div>
-    <x-slot name="script ">
-        <script type="text/javascript" > 
-            function deletePermission(id){
-                if (confirm('Áre you sure you want to delete ?')){
-$.ajax({
-    url:'{{ route("permissions.destroy")}}',
-    type: 'delete',
-    data: {id:id},
-    dataType: 'json',
-    headers: {
-        'x-csrf-token' : '{{ csrf_token()}}'
-    }
-    success: function(response){
-window .location.href ='{{route("permission.index")}}'
-    }
-
-});
-   }
-
+</div>
+<x-slot name="script">
+    <script type="text/javascript"> 
+        function deletePermission(id) {
+            if (confirm('Are you sure you want to delete?')) {
+                $.ajax({
+                    url: '{{ route("permissions.destroy", ":id") }}'.replace(':id', id),
+                    type: 'DELETE',
+                    dataType: 'json',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        window.location.href = '{{ route("permission.index") }}';
+                    },
+                    error: function(xhr) {
+                        alert('Something went wrong.');
+                    }
+                });
             }
-        </script>
-    </x-slot>
+        }
+    </script>
+</x-slot>
+
 </x-app-layout>
