@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,10 +13,10 @@ class UserController extends Controller
      */
     public function index()
     {
-     $users= User::latest()->paginate(10);
-     return view('users.list',[
-        'users'=>$users 
-     ]);
+        $users = User::latest()->paginate(10);
+        return view('users.list', [
+            'users' => $users
+        ]);
     }
 
     /**
@@ -47,7 +48,9 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $roles = Role::orderBy('name', 'ASC')->get();
+        $users = User::find($id);
+        return view('users.edit', compact('users', 'roles'));
     }
 
     /**

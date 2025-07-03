@@ -1,0 +1,1 @@
+<?php /**PATH C:\Users\ACI\Desktop\role\Role and permission\resources\views/articles/edit.blade.php ENDPATH**/ ?>

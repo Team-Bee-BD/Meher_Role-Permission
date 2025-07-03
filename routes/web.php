@@ -45,7 +45,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/articles', [PermissionController::class, 'destroy'])->name('articles.destroy');
 
 
-    Route::get('/users', [UserController::class, 'index'])->name('user.index');
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 });
 
 require __DIR__ . '/auth.php';
